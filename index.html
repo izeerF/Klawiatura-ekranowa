@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wisielec</title>
+</head>
+<body>
+    <h1 class="tytul">WISIELEC</h1>
+    <div class="obrazek"><img src="img/tree.jpg"></div>
+    <h1 id="hh"></h1>
+    <script>
+        var tekst = "";
+        var alfabet = [];
+for(let i = 65; i <= 90; i++){
+  alfabet.push(String.fromCharCode(i));
+}
+alfabet.forEach(element => {
+    litera = document.createElement('button');
+    litera.id = 'button'+element;
+    litera.addEventListener('click', function handleClick(event) {
+    wpisywanie(element)
+});
+    litera.textContent = element
+    document.body.appendChild(litera)
+    
+});
+function wpisywanie(letter){
+    tekst += letter + " ";
+    document.getElementById('hh').innerHTML = tekst; 
+}
+    </script>
+</body>
+</html>

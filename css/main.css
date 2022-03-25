@@ -1,0 +1,77 @@
+
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: MyFirstFont;
+    src: url(../font/PressStart2P-Regular.ttf);
+}
+button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 300%;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: orange 5px 5px;
+    
+}
+body{
+    background-color: rgb(194, 172, 146);
+}
+button:hover{
+    background-color: white;
+    border: none;
+    box-shadow: rgb(148, 146, 53) 5px 5px 4px;
+    color: black;
+    width: 106px;
+    height: 106px;
+    margin: 7px;
+}
+button:active {
+    border: none;
+    box-shadow: rgb(255, 238, 0) 5px 5px 4px;
+}
+#hh {
+    font-family: monospace;
+    box-sizing: content-box;  
+    width: 750px;
+    padding: 30px;  
+    border: 10px solid orange;
+    background-color: black;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 50px;
+    position: absolute;
+    margin-left: 600px;
+    margin-top: -400px;
+}
+.tytul {
+    text-align: center;
+    color: white;
+    text-shadow: orange 3px 3px;
+    font-family: MyFirstFont;
+    font-size: 50px;
+    background-color: black;
+    letter-spacing: 15px;
+    padding: 20px;
+    width: 550px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    box-shadow: orange 5px 7px;
+}
+.obrazek {
+    border: 10px solid orange;
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    margin-left: 210px;
+}
+img {
+    width: 380px;
+    height: 380px;
+}
