@@ -9,28 +9,80 @@
 </head>
 <body>
     <h1 class="tytul">WISIELEC</h1>
-    <div class="obrazek"><img src="img/tree.jpg"></div>
+    <div class="obrazek"><img id="wisielec" src="./img/0.png"></div>
     <h1 id="hh"></h1>
     <script>
+        var slowo = window.prompt("Wybierz słowo do zgadnięcia:")
+        slowo = slowo.toUpperCase();
+        var slowo2 = slowo.replace(/ /g, ""); 
+        slowo = slowo2
         var tekst = "";
+        var bledy = 0;
+        var podlogi = "";
         var alfabet = [];
 for(let i = 65; i <= 90; i++){
   alfabet.push(String.fromCharCode(i));
 }
 alfabet.forEach(element => {
     litera = document.createElement('button');
-    litera.id = 'button'+element;
+    litera.id = element;
     litera.addEventListener('click', function handleClick(event) {
     wpisywanie(element)
+    console.log(element)
 });
     litera.textContent = element
     document.body.appendChild(litera)
     
 });
 function wpisywanie(letter){
-    tekst += letter + " ";
-    document.getElementById('hh').innerHTML = tekst; 
+    document.getElementById(letter).disabled = true;
+    document.getElementById(letter).style.background = "red";
+if(slowo.includes(letter) == true){
+    console.log('zawiera ' + letter)
+    var indices= [], 
+        i;
+
+ for(i = 0; i < slowo.length; i++) {
+   if (slowo[i] === letter) {
+    replaceChar(podlogi, letter, i)
+   }
+   if(podlogi == slowo){
+    alert("WYGRAŁEŚ! \n Odpowiedź to: "+slowo+ "\n liczba błędów: "+ bledy)
+    location.reload(true);
+   }
+ }
+    
 }
+else {
+    console.log('nie zawiera ' + letter)
+    bledy2 = bledy + 1
+    bledy = bledy2
+    var img = document.getElementById("wisielec")
+    img.src = "./img/"+ bledy +".png";
+    if(bledy == 6){
+    alert("GAME OVER :3 \n Odpowiedź to: "+slowo)
+    location.reload(true);
+}
+}
+}
+
+for (var i = 0; i < slowo.length; i++) {
+  podlogi += "_";
+  
+}
+document.getElementById('hh').innerHTML = podlogi;
+function replaceChar(origString, replaceChar, index) {
+    let firstPart = origString.substr(0, index);
+    let lastPart = origString.substr(index + 1);
+      
+    let newString = firstPart + replaceChar + lastPart;
+    console.log(newString);
+    podlogi = newString;
+    document.getElementById('hh').innerHTML = podlogi;
+}
+
+
+
     </script>
 </body>
 </html>
